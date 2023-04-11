@@ -1,5 +1,5 @@
 //
-//  Settings.swift
+//  SettingsView.swift
 //  recnik_ios
 //
 //  Created by Alexander Plotnikov on 02.04.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Settings: View {
+struct SettingsView: View {
     
     let colorPrimary: UIColor = #colorLiteral(red: 0.9960784314, green: 0.2235294118, blue: 0.1176470588, alpha: 1)
     let mainBackcolor: UIColor = #colorLiteral(red: 0.9921568627, green: 0.9921568627, blue: 0.9921568627, alpha: 1)
@@ -47,7 +47,7 @@ struct Settings: View {
                     Text("Настройки")
                         .foregroundColor(Color(colorPrimary))
                         .font(.title)
-                        .bold()
+                        //.bold()
                 )
                 
                 SeparateLine(size: 0.5)
@@ -160,9 +160,9 @@ struct Settings: View {
                         
                         SeparateLine()
                         
-                        ForEach(0..<10) {index in
-                            Text("\(index)")
-                        }
+//                        ForEach(0..<10) {index in
+//                            Text("\(index)")
+//                        }
                     }
                 }
             }
@@ -174,7 +174,7 @@ struct Settings: View {
 
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
-        Settings()
+        SettingsView()
     }
 }
     
@@ -218,11 +218,12 @@ struct SeparateLine: View {
 
     let separatorColor: UIColor = #colorLiteral(red: 0.9098039216, green: 0.9098039216, blue: 0.9098039216, alpha: 1)
     var size: CGFloat = 1
+    var paddingBottom: CGFloat? = nil
     
     var body: some View {
         Color(separatorColor)
             .frame(width: .infinity, height: size)
-            .padding(Edge.Set.bottom, nil)
+            .padding(Edge.Set.bottom, paddingBottom)
     }
 }
 

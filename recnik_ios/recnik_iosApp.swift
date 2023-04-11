@@ -12,7 +12,7 @@ struct recnik_iosApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            Settings()
+            SettingsView()
         }
     }
 }
